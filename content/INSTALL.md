@@ -28,8 +28,6 @@ The following is advice on what to do before and during the installation of a Fe
 
 {% include alert.html type='tip' content='If you don\'t already have a Fedora Atomic installation, use a Fedora Atomic ISO that matches your secureblue target image to install one. If you want to use a secureblue Silverblue image, start with the Fedora Silverblue ISO, Kinoite for Kinoite images, Sericea (Sway Atomic) for Sericea images, and CoreOS for all the securecore images.<br>For more details on the available images, have a look at the <a href="/images">list of available images</a> before proceeding.' %}
 
-{% include alert.html type='caution' content='The Fedora 41 ISO contains a bugged version of rpm-ostree. As such, after using it to install Fedora Atomic, you <em>must</em> run rpm-ostree upgrade and then restart, before running the secureblue installer.' %}
-
 Before rebasing and during the installation, the following checks are recommended.
 
 ### [Fedora installation](#fedora-installation)
@@ -104,6 +102,7 @@ bash install_secureblue.sh
 - [Toggle MAC address randomization](#mac-randomization)
 - [Bash environment lockdown](#bash)
 - [LUKS Hardware Unlock](#luks-hardware-unlock)
+- [Flatpak Permissions Tuning](#flatpak-permissions-tuning)
 - [Validation](#validation)
 - [Optional: Trivalent Flags](#trivalent-flags)
 - [Read the FAQ](#faq)
@@ -133,6 +132,9 @@ rpm-ostree kargs \
 
 ### [Enroll SecureBoot key](#secureboot)
 {: #secureboot}
+
+
+{% include alert.html type='note' content='GNOME users on Nvidia images may notice that Gnome Software prompts them to create a new secureboot key. This prompt can and should be ignored, and the command below used instead.' %}
 
 ```
 ujust enroll-secureblue-secure-boot-key
@@ -254,6 +256,10 @@ ujust setup-luks-tpm-unlock
 ```
 
 Type `Y` when asked if you want to set a PIN.
+
+### [Flatpak Permissions Tuning](#flatpak-permissions-tuning)
+
+Consult our [Flatpak article](/articles/flatpak) for guidance on tuning Flatpak permissions.
 
 ### [Validation](#validation)
 {: #validation}
