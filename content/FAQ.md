@@ -199,7 +199,7 @@ Trying to start a container without first enabling the ability toggled by the uj
 ### [How do I enable userns for other apps?](#unconfined-userns)
 {: #unconfined-userns}
 
-The following command will toggle the ability of processes in the unconfined SELinux domain to create user namespaces. It's necessary for any apps that require this feature, such as bubblewrap when it isn't SUID-root.
+The following command will toggle the ability of processes in the unconfined SELinux domain to create user namespaces. It's necessary for any apps that require this feature, such as: browsers other than Trivalent, many [Electron](https://en.wikipedia.org/wiki/Electron_(software_framework)) apps, and bubblejail.
 
 ```
 ujust toggle-unconfined-domain-userns-creation
@@ -245,7 +245,7 @@ ujust toggle-ghns
 ### [Why doesn't my Xwayland app work?](#xwayland)
 {: #xwayland}
 
-Xwayland is disabled by default on GNOME, KDE Plasma, and Sway. If you need it, run:
+[Xwayland](https://wayland.freedesktop.org/docs/html/ch05.html#sect-X11-Application-Support-architecture) is disabled by default on GNOME, KDE Plasma, and Sway. Some apps haven't migrated to [Wayland](https://en.wikipedia.org/wiki/Wayland_(protocol)) yet, and will often say so when started from the terminal by complaining about not being able to find [X11](https://en.wikipedia.org/wiki/X.Org_Server). Since enabling Xwayland is a security degradation, you are encouraged to find alternatives for those apps. If you decide you still need Xwayland, run:
 
 ```
 ujust toggle-xwayland
