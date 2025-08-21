@@ -47,6 +47,8 @@ permalink: /faq
   - [How do I change my DE?](#change-de)
   - [How do I enable kernel modules?](#enable-kernel-modules)
   - [Which filters are included in Trivalent adblocking? How do I add a new filter?](#trivalent-filter)
+  - [Why aren’t YouTube ads blocked, and how can I watch YouTube without ads?](#youtube-ads)
+
 
 - [Troubleshooting](#troubleshooting)
   - [Something broke! How do I rollback?](#rollback)
@@ -67,7 +69,7 @@ permalink: /faq
   - [Why doesn't DRM content (spotify, netflix etc.) work in Trivalent?](#trivalent-protected-content)
   - [Why is my splash screen disabled on KDE?](#kde-splash-disabled)
   - [Why is my secureblue virtual machine integration broken?](#vm-integration)
-
+  
 <hr>
 
 ## [Project information](#project)
@@ -302,6 +304,11 @@ Some functionality requires you to enable extra kernel modules that are disabled
 {: #trivalent-filter}
 
 Trivalent comes preloaded with EasyList, EasyPrivacy, Fanboy Annoyance, and a wide set of regional filter lists covering Europe, Asia, the Middle East, and more. It also includes Anti-Adblock Filters to bypass detection. You can see the full list here: [Trivalent filter sources](https://github.com/secureblue/trivalent-subresource-filter/blob/live/copr_script.sh). If you want to add a new filter, open an issue or submit a pull request in the same repository.
+
+### [Why aren’t YouTube ads blocked, and how can I watch YouTube without ads?](#youtube-ads)
+{: #youtube-ads}
+
+Trivalent’s subresource filter cannot perform script injection or observe and alter what happens inside YouTube’s video player, so it can’t reliably intercept the scripts and dynamic behavior YouTube uses to serve ads. To avoid ads you need a tool capable of doing that. Common options are FreeTube [Electron Flatpak](https://flathub.org/apps/io.freetubeapp.FreeTube), Pipeline [Piped proxy Flatpak](https://flathub.org/apps/de.schmidhuberj.tubefeeder), and the YouTube PWA paired with  uBlock Origin‑Lite. Consider creating a separate profile for the Youtube PWA, so you can continue browsing extensionless for your usual profile.
 
 <hr>
 
