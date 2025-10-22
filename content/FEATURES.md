@@ -52,8 +52,8 @@ permalink: /features
 - Protect against brute force by locking user accounts for 24 hours after 50 failed login attempts, providing password quality suggestions and making use of hardened password hashing.
 - Disable and mask a variety of services by default (including cups, geoclue, passim, and others).
 
-## [Security ease-of-use](#ease)
-{: #ease}
+## [Security ease-of-use](#security-ease)
+{: #security-ease}
 
 - Provide system auditing tooling to verify the status of system hardening and provide users with suggestions.
 - Setup commands via `ujust` for installing desktop apps from common VPN providers.
@@ -61,3 +61,12 @@ permalink: /features
 - Provide tooling for automatically setting up and enabling LUKS TPM2+PIN integration for unlocking LUKS drives (on devices where the TPM is free of known vulnerabilities).
 - Provide tooling for automatically setting up and enabling LUKS FIDO2 integration for unlocking LUKS drives.
 - Provide toggles for a variety of the hardening set by default, for user convenience (`ujust --choose`).
+
+## [General ease-of-use] (#general-ease)
+{: #general-ease}
+
+- Provide out-of-the-box support for patent-encumbered codecs and drivers, which Fedora doesn't provide for legal reasons.
+- Provide server images with the ZFS kmod and tooling preinstalled (`-zfs`).
+- Provide images for any desired Nvidia driver and kmod configuration: `main` images with Nouveau + NVK, `nvidia` images with the Nvidia-closed kmod and drivers, and `nvidia-open` images with the Nvidia-open kmod and drivers.
+- Provide tooling to easily change desktop environments by rebasing between our images (`ujust rebase-secureblue`).
+- Install Homebrew, which (optionally) simplifies software installation and management of CLI apps.
