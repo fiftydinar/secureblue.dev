@@ -303,6 +303,8 @@ ujust set-bluetooth-modules on
 ujust distrobox-assemble
 ```
 
+Note that Distrobox is not a security tool. It focuses on [integration, not isolation](https://distrobox.it/#security-implications), and [there are no plans to change this](https://github.com/89luca89/distrobox/issues/28).
+
 ### [How do I customize secureblue?](#customization)
 {: #customization}
 
