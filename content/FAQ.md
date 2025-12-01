@@ -38,6 +38,7 @@ permalink: /faq
   - [How do I install Steam?](#steam)
   - [How do I enable anti-cheat support?](#anticheat)
   - [How do I install Docker?](#docker)
+  - [How do I install virtualization packages?](#libvirt)
   - [How do I install additional fonts?](#fonts)
   - [How do I enable printing?](#printing)
   - [Why am I unable to start containers?](#container-userns)
@@ -98,7 +99,7 @@ secureblue is a collaborative effort to ship a maximally secure Linux operating 
 
 QubesOS is a security-oriented desktop operating system based on Fedora Linux and the Xen hypervisor for those who want to use virtualization to isolate and compartmentalize. You can use and make templates to run various operating systems inside of "qubes". Isolation between different qubes is significantly stronger than the isolation between apps in traditional desktop operating systems, so QubesOS can fill certain security needs better than secureblue. For example, untrusted files can only compromise the qube that the file is opened in.
 
-secureblue is a Linux operating system with known security holes filled and proactive exploit mitigations in place. Virtualization does work on secureblue, but that is not its focus; secureblue lacks [several virtualization features](https://www.qubes-os.org/doc/) that QubesOS has. secureblue also places emphasis on usability, while QubesOS is considered by many to have a steep learning curve.
+secureblue is a Linux operating system with known security holes filled and proactive exploit mitigations in place. Virtualization [works on secureblue](#libvirt), but is not its focus. secureblue lacks [several virtualization features](https://www.qubes-os.org/doc/) that QubesOS has. secureblue also places emphasis on usability, while QubesOS is considered by many to have a steep learning curve.
 
 There [is interest](https://github.com/QubesOS/qubes-issues/issues/9755) for a secureblue template in QubesOS, but secureblue relies on Wayland which QubesOS does [not yet support](https://github.com/QubesOS/qubes-issues/issues/3366).
 
@@ -257,6 +258,16 @@ Similarly, you can uninstall Docker with:
 
 ```
 ujust uninstall-docker
+```
+
+
+### [How do I install virtualization packages?](#libvirt)
+{: #libvirt}
+
+This will install [virt-manager](https://en.wikipedia.org/wiki/Virt-manager) and other virtualization packages:
+
+```
+ujust install-libvirt-packages
 ```
 
 ### [How do I install additional fonts?](#fonts)
