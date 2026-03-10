@@ -99,6 +99,7 @@ IMAGE_NAME.iso.torrent: OK
 sha256sum: WARNING: 8 lines are improperly formatted
 ```
 
+-->
 ## [For all users](#all-users)
 {: #all-users}
 
@@ -132,4 +133,3 @@ Expected output:
 IMAGE_NAME.iso: OK
 sha256sum: WARNING: 8 lines are improperly formatted
 ```
--->
