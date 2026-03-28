@@ -11,7 +11,7 @@ All donations are appreciated and help support our mission to make desktop Linux
 - Cover infrastructure/builder/hosting/domain costs
 - Ensure project continuity in the event of a "rainy day" (e.g. GitHub changing their free compute policy)
 
-Sponsors get a role on the [Discord](https://discord.gg/qMTv5cKfbF) if desired. If you've donated but haven't yet been tagged with the role, please reach out to on Discord.
+Sponsors get a role on the [Discord](https://discord.gg/qMTv5cKfbF) if desired. If you've donated but haven't yet been tagged with the role, please reach out on Discord.
 
 There are multiple options available for donation:
 
