@@ -100,11 +100,6 @@ Things to remember during installation:
       </select>
     </div>
   </div>
-  <br>
-  <label>
-    <input type="checkbox" name="terms" required>
-    I have read and understand the permissions and disclaimers of the <a href="#license">license</a>
-  </label>
   <br><br>
   <i>Download options</i><br />
   <button type="submit" formaction="https://isos.secureblue.dev/download">Download ISO</button>
