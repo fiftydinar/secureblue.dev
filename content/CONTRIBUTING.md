@@ -30,7 +30,7 @@ And if you like the project, but just don't have time to contribute, that's fine
   - [Preparing Image and Kernel signing key](#signing-keys-ga)
   - [Preparing GitHub Actions CI Workflow](#workflow-ga)
   - [Recommended Git Workflow for Pull Requests](#workflow-git)
-  - [Building and Rebasing to your Image Repository](#rebase-ga)
+  - [Building and Rebasing to your Image Registry](#rebase-ga)
 - [Building Locally](#building-locally)
 - [Styleguides](#styleguides)
   - [Commit Messages](#commit-messages)
@@ -118,9 +118,9 @@ git switch -c test-build upstream/live
 ### [Preparing Image and Kernel signing key](#signing-keys-ga)
 {: #signing-keys-ga}
 
-Follow the instructions [here](https://blue-build.org/how-to/cosign/) to add your own keys to verify your own custom image. Then create two copies of your your public singing key in `files/system/etc/pki/containers/` called  `GITHUB_REPOSITORY_OWNER-2025.pub` and `GITHUB_REPOSITORY_OWNER.pub`.
+Follow the instructions [here](https://blue-build.org/how-to/cosign/) to add your own keys to verify your own custom image. Then create two copies of your your public signing key in `files/system/usr/share/pki/containers/` called  `GITHUB_REPOSITORY_OWNER-2025.pub` and `GITHUB_REPOSITORY_OWNER.pub`.
 
-You must also add a kernel signing key to your repository secrets for verifying kernel modules. [The kernel signing makes use of an X.509 certificate](https://www.kernel.org/doc/html/latest/admin-guide/module-signing.html), in which you can generate your own or use the test key pair provided in the repository. Note that the key pair in the repository is for test purposes only, as using it in production would allow the loading of malicious kernel modules that seem legitimate. If using the test key pair provided, first copy the private key `.github/workflows/private_key.priv.test` to a GitHub repository secret called `KERNEL_PRIVKEY` alongside your signing key you created to verify your public image. Then copy the public key `.github/workflows/pub_key.der.test` to `files/system/etc/pki/akmods/certs/`.
+You must also add a kernel signing key to your repository secrets for verifying kernel modules. [The kernel signing makes use of an X.509 certificate](https://www.kernel.org/doc/html/latest/admin-guide/module-signing.html), in which you can generate your own or use the test key pair provided in the repository. Note that the key pair in the repository is for test purposes only, as using it in production would allow the loading of malicious kernel modules that seem legitimate. If using the test key pair provided, first copy the private key `.github/workflows/private_key.priv.test` to a GitHub repository secret called `KERNEL_PRIVKEY` alongside your signing key you created to verify your public image. Then copy the public key `.github/workflows/pub_key.der.test` to `files/system/usr/share/pki/akmods/certs/`.
 
 ### [Preparing GitHub Actions CI Workflow](#workflow-ga)
 {: #workflow-ga}
@@ -186,7 +186,7 @@ git cherry-pick test-build-setup
 git push --force-with-lease origin test-build
 ```
 
-### [Building and Rebasing to your Image Repository](#rebase-ga)
+### [Building and Rebasing to your Image Registry](#rebase-ga)
 {: #rebase-ga}
 
 Once everything is ready, go to **Actions** > **build** and select run workflow, making sure you select the branch you just set up.
